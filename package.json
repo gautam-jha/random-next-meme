@@ -14,9 +14,11 @@
     "next": "10.x",
     "react": "17.x",
     "react-dom": "17.x",
-    "react-infinite-scroll-component": "^6.1.0"
+    "react-infinite-scroll-component": "^6.1.0",
+    "tailwindcss": "^2.2.2"
   },
   "devDependencies": {
+    "autoprefixer": "^10.2.6",
     "eslint": "^7.29.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -25,6 +27,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "postcss": "^8.3.5",
     "prettier": "^2.3.1"
-  }
+    }
 }

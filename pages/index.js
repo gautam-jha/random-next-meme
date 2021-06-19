@@ -3,6 +3,7 @@ import { useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import styles from '../styles/Home.module.css';
 import Meme from '../component/Meme';
+import Header from '../component/Header';
 
 const fetcher = async url => {
     const response = await fetch(url);
@@ -21,18 +22,15 @@ export default function Home({ initalMemes }) {
     };
 
     return (
-        <div className={styles.container}>
+        <div className="bg-blue-50">
             <Head>
                 <title>Random Memes</title>
                 <meta name="description" content="Random Memes by Gauti." />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={styles.main}>
-                <h3 className={styles.title}>
-                    Random <a>Next.meme!</a>
-                </h3>
-
+            <Header />
+            <main className="container mx-auto px-4">
                 <div className={styles.grid}>
                     {/* {error && <div>Failed to load meme</div>} */}
                     {memes ? (
@@ -40,7 +38,7 @@ export default function Home({ initalMemes }) {
                             dataLength={memes.length + 5}
                             next={getMemes}
                             hasMore={hasMore}
-                            className={styles.infinity}
+                            className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5"
                             loader={<h3> Loading...</h3>}
                             endMessage={<h4>Nothing more to show</h4>}>
                             {memes.map(meme => (
