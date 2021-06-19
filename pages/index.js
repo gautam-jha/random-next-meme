@@ -54,11 +54,8 @@ export default function Home({ initalMemes }) {
             </main>
 
             <footer className={styles.footer}>
-                <a
-                    // href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                    // target="_blank"
-                    rel="noopener noreferrer">
-                    Developed by <span className={styles.logo}>Gautam</span>
+                <a rel="noopener noreferrer">
+                    <span> Made with hate for instagram reels.</span>
                 </a>
             </footer>
         </div>

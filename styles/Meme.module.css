@@ -1,4 +1,4 @@
-.meme{
+.meme {
     border-bottom: 1px solid #ddd;
     margin-bottom: 40px;
     text-align: center;
@@ -6,7 +6,4 @@
 
 .meme {
     width: 100%;
-  }
-  @media (min-width: 40em) {
-  
-  }
+}
