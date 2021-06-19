@@ -66,6 +66,7 @@ export async function getStaticProps() {
     const data = await fetcher('https://meme-api.herokuapp.com/gimme/3');
 
     return {
-        props: { initalMemes: data?.memes }
+        props: { initalMemes: data?.memes },
+        revalidate: 15
     };
 }
