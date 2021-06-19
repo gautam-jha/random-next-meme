@@ -30,7 +30,7 @@ export default function Home({ initalMemes }) {
             </Head>
 
             <Header />
-            <main className="container mx-auto px-4">
+            <main className="container mx-auto px-4 pt-10">
                 <div className={styles.grid}>
                     {/* {error && <div>Failed to load meme</div>} */}
                     {memes ? (
@@ -38,7 +38,7 @@ export default function Home({ initalMemes }) {
                             dataLength={memes.length + 5}
                             next={getMemes}
                             hasMore={hasMore}
-                            className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5"
+                            className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5"
                             loader={<h3> Loading...</h3>}
                             endMessage={<h4>Nothing more to show</h4>}>
                             {memes.map(meme => (
