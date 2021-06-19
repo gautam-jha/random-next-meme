@@ -16,7 +16,6 @@
     "plugin:react/recommended",
     "airbnb",
     "prettier",
-    "prettier/react",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
@@ -39,6 +38,8 @@
         "aspects": ["invalidHref", "preferButton"]
       }
     ],
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-props-no-spreading": "off"
   }
 }

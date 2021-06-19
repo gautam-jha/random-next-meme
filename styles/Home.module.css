@@ -113,7 +113,10 @@
 .logo {
   height: 1em;
 }
-
+.infinity{
+  overflow: auto;
+  max-width: 100%;
+}
 @media (max-width: 600px) {
   .grid {
     width: 100%;

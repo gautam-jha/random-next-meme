@@ -1,21 +1,23 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import Meme from '../component/Meme';
 import { useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import styles from '../styles/Home.module.css';
+import Meme from '../component/Meme';
 
-const fetcher = async url => await fetch(url).then(async res => await res.json());
+const fetcher = async url => {
+    const response = await fetch(url);
+    const data = response.json();
+    return data;
+};
 
 // export async function
-export default function Home(props) {
-    console.log(props);
-    // return false;
-    const [hasMore, setHasMore] = useState(true);
-    const [memes, setMemes] = useState(props?.memes);
-
+export default function Home({ initalMemes }) {
+    const [hasMore] = useState(true);
+    const [memes, setMemes] = useState(initalMemes);
     const getMemes = async () => {
         const data = await fetcher('/api/random');
-        setMemes([...memes, ...data.memes]);
+
+        setMemes([...new Map([...memes, ...data.memes].map(item => [item.ups, item])).values()]);
     };
 
     return (
@@ -38,10 +40,11 @@ export default function Home(props) {
                             dataLength={memes.length + 5}
                             next={getMemes}
                             hasMore={hasMore}
+                            className={styles.infinity}
                             loader={<h3> Loading...</h3>}
                             endMessage={<h4>Nothing more to show</h4>}>
                             {memes.map(meme => (
-                                <Meme data={meme} key={meme.url} />
+                                <Meme data={meme} key={meme.ups} />
                             ))}
                         </InfiniteScroll>
                     ) : (
@@ -66,6 +69,6 @@ export async function getStaticProps() {
     const data = await fetcher('https://meme-api.herokuapp.com/gimme/3');
 
     return {
-        props: { memes: data?.memes }
+        props: { initalMemes: data?.memes }
     };
 }
