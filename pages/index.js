@@ -2,8 +2,8 @@ import Head from 'next/head';
 import { useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import styles from '../styles/Home.module.css';
-import Meme from '../component/Meme';
-import Header from '../component/Header';
+import Meme from '../components/Meme';
+import Header from '../components/Header';
 
 const fetcher = async url => {
     const response = await fetch(url);
@@ -65,6 +65,6 @@ export async function getStaticProps() {
 
     return {
         props: { initalMemes: data?.memes },
-        revalidate: 15
+        revalidate: 5
     };
 }
