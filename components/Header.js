@@ -9,7 +9,6 @@ const links = [
 
 function Header() {
     const router = useRouter();
-    console.log(router);
 
     return (
         <nav className="text-center sticky top-0 z-50 bg-white shadow-lg">
