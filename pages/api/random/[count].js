@@ -1,5 +1,5 @@
-function handler(req, res) {
-    fetch(`https://meme-api.herokuapp.com/gimme/3`)
+function handler({ query: { count } }, res) {
+    fetch(`https://meme-api.herokuapp.com/gimme/${count !== 'suffle' ? count : ''}`)
         .then(r => r.json())
         .then(data => {
             res.status(200).json(data);
