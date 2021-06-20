@@ -31,23 +31,36 @@ export default function Home({ initalMemes }) {
 
             <Header />
             <main className="container mx-auto px-4 pt-10">
-                <div className={styles.grid}>
-                    {/* {error && <div>Failed to load meme</div>} */}
-                    {memes ? (
-                        <InfiniteScroll
-                            dataLength={memes.length + 5}
-                            next={getMemes}
-                            hasMore={hasMore}
-                            className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5"
-                            loader={<h3> Loading...</h3>}
-                            endMessage={<h4>Nothing more to show</h4>}>
-                            {memes.map(meme => (
-                                <Meme data={meme} key={meme.ups} />
-                            ))}
-                        </InfiniteScroll>
-                    ) : (
-                        <div>Loading...</div>
-                    )}
+                <div className="grid  sm:grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="sm:col-span-3 md:col-span-1 bg-white hidden md:block pl-5">
+                        <h4 className="text-lg mt-4 mb-2">Memes</h4>
+                        <p>Random Meme</p>
+                        <p>Infinity Meme</p>
+                        <h4 className="text-lg mt-4 mb-2">Categories</h4>
+                        <p>Wholesomememes</p>
+                        <p>Funny</p>
+                        <p>Dankmemes</p>
+                        <p>Darkmemes</p>
+                        <p>Humour</p>
+                    </div>
+                    <div className="col-span-2">
+                        {/* {error && <div>Failed to load meme</div>} */}
+                        {memes ? (
+                            <InfiniteScroll
+                                dataLength={memes.length + 5}
+                                next={getMemes}
+                                hasMore={hasMore}
+                                className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5"
+                                loader={<h3> Loading...</h3>}
+                                endMessage={<h4>Nothing more to show</h4>}>
+                                {memes.map(meme => (
+                                    <Meme data={meme} key={meme.ups} />
+                                ))}
+                            </InfiniteScroll>
+                        ) : (
+                            <div>Loading...</div>
+                        )}
+                    </div>
                 </div>
             </main>
 
