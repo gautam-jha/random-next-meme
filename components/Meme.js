@@ -63,9 +63,9 @@ function Meme(props) {
                     <TwitterShareButton url={data.url} title={data.title}>
                         <TwitterIcon size={32} round />
                     </TwitterShareButton>
-                    <WhatsappShareButton url={data.url} title={data.title} separator=":: ">
+                    {/* <WhatsappShareButton url={data.url} title={data.title} separator=":: ">
                         <WhatsappIcon size={32} round />
-                    </WhatsappShareButton>
+                    </WhatsappShareButton> */}
                 </div>
             </div>
         )
