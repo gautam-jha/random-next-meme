@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const links = [
-    { href: '/', label: '' },
     { href: '/about', label: 'About' }
     // { href: 'https://github.com/gautam-jha/random-next-meme', label: 'GitHub' }
 ];
