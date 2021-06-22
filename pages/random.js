@@ -82,6 +82,6 @@ export async function getStaticProps() {
 
     return {
         props: { initalMemes: data },
-        revalidate: 5
+        revalidate: 15
     };
 }
