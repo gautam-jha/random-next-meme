@@ -8,9 +8,9 @@ import {
     TelegramShareButton,
     TelegramIcon,
     TwitterShareButton,
-    TwitterIcon,
-    WhatsappShareButton,
-    WhatsappIcon
+    TwitterIcon
+    // WhatsappShareButton,
+    // WhatsappIcon
 } from 'next-share';
 
 import styles from '../styles/Meme.module.css';
