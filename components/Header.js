@@ -35,7 +35,7 @@ function Header() {
                             className={`${
                                 router.pathname === '/' ? ' hover:bg-blue-400  bg-blue-300 ' : ''
                             } text-base  rounded-l-none border-l-0  hover:scale-110 focus:outline-none flex justify-center px-2 py-1 rounded font-bold cursor-pointer   text-gray-700  border duration-200 ease-in-out  transition`}>
-                            <div className="flex leading-5">Infinite</div>
+                            <div className="flex leading-5">Scrolling</div>
                         </button>
                     </Link>
                 </li>
