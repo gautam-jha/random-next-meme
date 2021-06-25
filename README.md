@@ -4,11 +4,13 @@ Just a project that is useful for me to understand Next.Js better and reading me
 
 - Buit with Next.Js
 - Airbnb Coding Standards
-- Reddit Posts
+- Feature Random Memes
+- Feature Scrolling Memes 
 
 # Todos
-- TailWind
-- Contributors & credit section  
+- Contributors & credit section
+- 9 Gag scrapper
+- Post as per user interest
 
 - [Check Memes Scrollling](https://random-next-meme.vercel.app/)
 - [Check Memes Without Scrolling](https://random-next-meme.vercel.app/random/)
