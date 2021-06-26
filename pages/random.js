@@ -1,27 +1,21 @@
-import { useState, useContext } from 'react';
-
+import { useContext } from 'react';
 import Layout from '../components/Layout';
 import { Meme } from '../components';
-import { fetcher, getMemesByCategory } from '../helper';
+import { fetcher } from '../helper';
 import Context from '../components/context';
 
 // export async function
-export default function Random({ initalMemes: meme }) {
-    const [data, setData] = useState(meme);
-    const [loading, setLoading] = useState(false);
-
-    const { category } = useContext(Context);
-
-    const suffle = async () => {
-        setLoading(true);
-        const resp = await getMemesByCategory(category, 1);
-        setData(resp?.memes[0]);
-        setLoading(false);
-    };
+export default function Random({ initalMemes }) {
+    const { suffle, data, loading } = useContext(Context);
 
     return (
         <Layout>
-            <Meme data={data} key={data?.ups} loading={loading} />
+            {data ? (
+                <Meme data={data} key={data?.ups} loading={loading} />
+            ) : (
+                <Meme data={initalMemes} key={initalMemes?.ups} loading={loading} />
+            )}
+
             <div className="autoprefixer flex mb-10 justify-center">
                 <button
                     type="button"

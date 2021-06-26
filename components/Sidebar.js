@@ -8,7 +8,6 @@ function Sidebar() {
         memes: 'Memes',
         wholesomememes: 'Wholesome memes',
         dankmemes: 'Dank memes',
-        raimimemes: 'Raimi memes',
         historymemes: 'History memes',
         humour: 'Humour',
         comedyheaven: 'Funny',
@@ -28,11 +27,15 @@ function Sidebar() {
                 return (
                     <button
                         key={key}
-                        onClick={() => setCategory(`category/${key}`)}
+                        onClick={() => {
+                            setCategory(`category/${key}`);
+                        }}
                         type="button"
                         className={`${
-                            category.substr(category.indexOf('/')+1) == key ? 'bg-blue-700 text-white' : 'bg-red-50'
-                        } hover:bg-blue-700 hover:text-white font-bold py-1 px-2 rounded m-1  whitespace-nowrap` }>
+                            category.substr(category.indexOf('/') + 1) == key
+                                ? 'bg-blue-700 text-white'
+                                : 'bg-red-50'
+                        } hover:bg-blue-700 hover:text-white font-bold py-1 px-2 rounded m-1  whitespace-nowrap`}>
                         #{value}
                     </button>
                 );
