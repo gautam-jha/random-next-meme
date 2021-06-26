@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import Context from './context';
+import styles from '../styles/Meme.module.css';
 
 function Sidebar() {
     const { category, setCategory } = useContext(Context);
@@ -21,8 +22,9 @@ function Sidebar() {
     };
 
     return (
-        <div className="sticky h-screen top-10 md:grid md:col-span-1 bg-white sm:overflow-x-auto mb-5 p-2">
-            <h4 className="text-lg mt-4 hidden md:block">Categories</h4>
+        <div
+            className={`sticky h-screen top-10 inline col-span-1 bg-white mb-5 p-2 sm:left-0 ${styles.sidebar_in_mobile}`}>
+            <h4 className="text-lg mt-4 hidden md:block ">Categories</h4>
             {Object.entries({ ...categories }).map(([key, value]) => {
                 return (
                     <button
@@ -32,10 +34,10 @@ function Sidebar() {
                         }}
                         type="button"
                         className={`${
-                            category.substr(category.indexOf('/') + 1) == key
+                            category.substr(category.indexOf('/') + 1) === key
                                 ? 'bg-blue-700 text-white'
                                 : 'bg-red-50'
-                        } hover:bg-blue-700 hover:text-white font-bold py-1 px-2 rounded m-1  whitespace-nowrap`}>
+                        } hover:bg-blue-700 hover:text-white font-bold py-1 px-2 rounded m-1 h-9 whitespace-nowrap`}>
                         #{value}
                     </button>
                 );

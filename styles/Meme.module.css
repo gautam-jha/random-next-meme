@@ -11,3 +11,13 @@
 .social_icons button {
     margin-right: 8px !important;
 }
+
+@media (max-width: 600px) {
+
+        .sidebar_in_mobile{
+            display: flex;
+            overflow: auto;
+            height: 60px;
+        }
+
+}
