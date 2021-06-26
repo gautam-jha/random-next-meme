@@ -16,4 +16,9 @@ const getSingleMemes = async () => {
     return data;
 };
 
-export { fetcher, getMemes, getSingleMemes };
+const getMemesByCategory = async (cat, count) => {
+    const data = await fetcher(`/api/random/${cat}/${count}/`);
+    return data;
+};
+
+export { fetcher, getMemes, getSingleMemes, getMemesByCategory };
