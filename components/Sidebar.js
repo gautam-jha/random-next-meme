@@ -21,8 +21,8 @@ function Sidebar() {
     };
 
     return (
-        <div className="sm:flex  md:col-span-1 bg-white sm:overflow-x-auto mb-5 p-2">
-            <h4 className="text-lg mt-4 mb- 2 hidden md:block">Categories</h4>
+        <div className="sticky h-screen top-10 md:grid md:col-span-1 bg-white sm:overflow-x-auto mb-5 p-2">
+            <h4 className="text-lg mt-4 hidden md:block">Categories</h4>
             {Object.entries({ ...categories }).map(([key, value]) => {
                 return (
                     <button
