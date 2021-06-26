@@ -14,3 +14,12 @@ Just a project that is useful for me to understand Next.Js better and reading me
 
 - [Check Memes Scrollling](https://random-next-meme.vercel.app/)
 - [Check Memes Without Scrolling](https://random-next-meme.vercel.app/random/)
+
+
+## Contributors :bust_in_silhouette:
+* **[Vipin Kumar Dinkar](https://github.com/nicestrudeguy)**
+* **[Gautam Jha](https://github.com/gautam-jha)**
+
+## Special Credit
+Thanks to ```Dev Daksan``` for this wonderful API.
+* **[Dev Daksan](https://github.com/D3vd)**
