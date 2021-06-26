@@ -16,7 +16,7 @@ export default function Random({ initalMemes }) {
                 <Meme data={initalMemes} key={initalMemes?.ups} loading={loading} />
             )}
 
-            <div className="autoprefixer flex mb-10 justify-center">
+            <div className="autoprefixer flex mb-10 justify-center sticky bottom-0">
                 <button
                     type="button"
                     onClick={() => suffle()}

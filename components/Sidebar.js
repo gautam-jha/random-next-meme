@@ -25,6 +25,19 @@ function Sidebar() {
         <div
             className={`sticky h-screen top-10 inline col-span-1 bg-white mb-5 p-2 sm:left-0 ${styles.sidebar_in_mobile}`}>
             <h4 className="text-lg mt-4 hidden md:block ">Categories</h4>
+            {Object.entries({ ...country }).map(([key, value]) => {
+                return (
+                    <button
+                        key={key}
+                        onClick={() => setCategory(`country/${key}`)}
+                        type="button"
+                        className={`${
+                            category.includes(key) ? 'bg-blue-700 text-white' : 'bg-red-50'
+                        } hover:bg-blue-700 hover:text-white font-bold py-1 px-2 rounded m-1 whitespace-nowrap`}>
+                        #{value}
+                    </button>
+                );
+            })}
             {Object.entries({ ...categories }).map(([key, value]) => {
                 return (
                     <button
@@ -38,19 +51,6 @@ function Sidebar() {
                                 ? 'bg-blue-700 text-white'
                                 : 'bg-red-50'
                         } hover:bg-blue-700 hover:text-white font-bold py-1 px-2 rounded m-1 h-9 whitespace-nowrap`}>
-                        #{value}
-                    </button>
-                );
-            })}
-            {Object.entries({ ...country }).map(([key, value]) => {
-                return (
-                    <button
-                        key={key}
-                        onClick={() => setCategory(`country/${key}`)}
-                        type="button"
-                        className={`${
-                            category.includes(key) ? 'bg-blue-700 text-white' : 'bg-red-50'
-                        } hover:bg-blue-700 hover:text-white font-bold py-1 px-2 rounded m-1 whitespace-nowrap`}>
                         #{value}
                     </button>
                 );
