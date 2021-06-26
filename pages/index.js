@@ -1,30 +1,24 @@
-import { useState, useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { fetcher, getMemesByCategory } from '../helper';
+import { fetcher } from '../helper';
 import { Meme } from '../components';
 import Layout from '../components/Layout';
 import Context from '../components/context';
 
-// export async function
-export default function Home({ initalMemes }) {
-    const [hasMore] = useState(true);
-    const [memes, setMemes] = useState(initalMemes);
-    const { category } = useContext(Context);
+export default function Home({ initialMemes }) {
+    const { loadNext, memes, setMemes } = useContext(Context);
+
+    useEffect(() => {
+        setMemes(initialMemes);
+    }, []);
 
     return (
         <Layout>
             {memes ? (
                 <InfiniteScroll
                     dataLength={memes.length + 5}
-                    next={async () => {
-                        const data = await getMemesByCategory(category, 4);
-                        setMemes([
-                            ...new Map(
-                                [...memes, ...(data?.memes ?? data)].map(item => [item.ups, item])
-                            ).values()
-                        ]);
-                    }}
-                    hasMore={hasMore}
+                    next={async () => loadNext()}
+                    hasMore={1}
                     className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5"
                     loader={
                         <h3 className="flex place-content-center">
@@ -53,7 +47,7 @@ export async function getStaticProps() {
     const data = await fetcher('https://meme-api.herokuapp.com/gimme/4');
 
     return {
-        props: { initalMemes: data?.memes },
+        props: { initialMemes: data?.memes },
         revalidate: 15
     };
 }
