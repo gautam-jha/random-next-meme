@@ -1,5 +1,10 @@
 # Contributor Covenant Code of Conduct
 
+## Why this?
+
+I just want to improve my code, this project was developed in a week and
+I welcome everyone who want to try out some frontend exposure, feel free to contribute or change.
+
 
 ## Our Pledge
 
