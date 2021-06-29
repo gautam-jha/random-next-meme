@@ -5,7 +5,8 @@ Just a project that is useful for me to understand Next.Js better and reading me
 - Buit with Next.Js
 - Airbnb Coding Standards
 - Feature Random Memes
-- Feature Scrolling Memes 
+- Feature Scrolling Memes
+- Developed for Mobile browsers.
 
 # Todos
 - Contributors & credit section
