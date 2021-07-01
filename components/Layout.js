@@ -4,7 +4,7 @@ import { Header, Footer, Sidebar } from './index';
 
 export default function Layout({ children }) {
     return (
-        <div className="bg-blue-50">
+        <div className="bg-blue-50 dark:bg-black dark:bg-opacity-80 ">
             <Head>
                 <title>Random Memes</title>
                 <meta name="description" content="Random Memes by Gauti." />

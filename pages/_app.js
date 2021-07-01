@@ -1,4 +1,5 @@
 // import '../styles/globals.css';
+import { ThemeProvider } from 'next-themes';
 import { useState, useEffect } from 'react';
 import 'tailwindcss/tailwind.css';
 import Context from '../components/context';
@@ -34,7 +35,9 @@ function MyApp({ Component, pageProps }) {
     return (
         <Context.Provider
             value={{ category, setCategory, suffle, loadNext, data, loading, memes, setMemes }}>
-            <Component {...pageProps} />
+            <ThemeProvider attribute="class">
+                <Component {...pageProps} />
+            </ThemeProvider>
         </Context.Provider>
     );
 }

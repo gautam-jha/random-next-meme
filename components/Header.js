@@ -10,7 +10,7 @@ function Header() {
     const router = useRouter();
 
     return (
-        <nav className="text-center sticky top-0 z-50 bg-white shadow-lg">
+        <nav className="text-center sticky top-0 z-50 bg-white dark:bg-white dark:bg-opacity-5 shadow-lg">
             <ul className="flex justify-between px-4 py-1">
                 <li className="flex px-3 py-2 self-center">
                     <Link href="/">
@@ -23,7 +23,7 @@ function Header() {
                             type="button"
                             className={`${
                                 router.pathname === '/random'
-                                    ? ' hover:bg-blue-400  bg-blue-300 '
+                                    ? ' hover:bg-blue-400  bg-blue-300 dark:bg-yellow-500'
                                     : ''
                             } text-base  rounded-r-none  hover:scale-110 focus:outline-none flex justify-center px-2 py-1 rounded font-bold cursor-pointer hover:bg-teal-200  bg-teal-100 border duration-200 ease-in-out text-teal-700 transition`}>
                             <div className="flex leading-5">Random</div>
@@ -33,7 +33,9 @@ function Header() {
                         <button
                             type="button"
                             className={`${
-                                router.pathname === '/' ? ' hover:bg-blue-400  bg-blue-300 ' : ''
+                                router.pathname === '/'
+                                    ? ' hover:bg-blue-400  bg-blue-300 dark:bg-yellow-500'
+                                    : ''
                             } text-base  rounded-l-none border-l-0  hover:scale-110 focus:outline-none flex justify-center px-2 py-1 rounded font-bold cursor-pointer   text-gray-700  border duration-200 ease-in-out  transition`}>
                             <div className="flex leading-5">Scrolling</div>
                         </button>
